@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selamat Kamu Kena Prank!</title>
+  <style>
+    body {
+      background-color: #ffe6e6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #ff1a1a;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 40px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    .emoji {
+      font-size: 48px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 SELAMAT! 🎉</h1>
+  <p>Kamu resmi...</p>
+  <p><strong class="emoji">KENA PRANK 😜</strong></p>
+  <button onclick="alert('WKWKWK, makasih udah jadi korban prank 😆')">Coba Klik di Sini</button>
+
+  <script>
+    setInterval(() => {
+      const emoji = document.createElement('div');
+      emoji.innerText = '🎊';
+      emoji.style.position = 'fixed';
+      emoji.style.left = Math.random() * window.innerWidth + 'px';
+      emoji.style.top = '0px';
+      emoji.style.fontSize = '24px';
+      emoji.style.animation = 'fall 3s linear forwards';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 3000);
+    }, 300);
+
+    const style = document.createElement('style');
+    style.innerHTML = \`
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+    \`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
